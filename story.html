@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Story — Across the Pool</title>
+<meta name="description" content="The ten-day interactive timeline of Across the Pool, plus the Confirmed / Plausible / Unconfirmed tracker for Sam and Surfer's story so far.">
+<meta name="keywords" content="Menorca holiday romance, coming-of-age series, summer holiday romance">
+<link rel="canonical" href="./story.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="./index.html" class="wordmark">ACROSS THE <span class="pool-word">POOL</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">☰ Menu</button>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./characters.html">Characters</a></li>
+      <li><a href="./story.html" aria-current="page">The Story</a></li>
+      <li><a href="./episodes.html">Episodes</a></li>
+      <li><a href="./gallery.html">Gallery</a></li>
+      <li><a href="./trailer.html">Trailer</a></li>
+      <li><a href="./behind-the-story.html">Behind the Story</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">The Story So Far</p>
+      <h1>Ten days. Six confirmed. Four still unfolding.</h1>
+      <p class="hero-tagline" style="max-width:760px;">Click any unlocked day to see Sam's take next to what actually happened. Days 7 to 10 haven't happened yet, so they stay locked.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="timeline">
+        <div class="timeline-track" data-timeline-track role="list" aria-label="Ten day story timeline"></div>
+        <div class="day-detail" data-timeline-detail aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container section-head">
+      <p class="eyebrow">Tracker</p>
+      <h2>Confirmed / Plausible / Unconfirmed</h2>
+      <p>A running tally of what's actually true, what's reasonable to guess, and what nobody, including Sam, actually knows yet.</p>
+    </div>
+    <div class="container tracker-grid" data-tracker></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Where It Could Go</p>
+        <h2>Story Updates (none of this is canon)</h2>
+        <p>Across the Pool is being written as it happens. These are simply possibilities, not spoilers, not confirmed, and not a promise about how the holiday ends.</p>
+      </div>
+      <div class="pill-list" id="future-updates"></div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container section-head">
+      <p class="eyebrow">The Obvious Next Step</p>
+      <h2>Someone has to say "Hi."</h2>
+      <p>Three days left. No conversation yet. That's the whole cliffhanger.</p>
+      <a href="./episodes.html" class="btn btn-primary mt-2">See the episodes</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="./index.html" class="wordmark">ACROSS THE <span class="pool-word">POOL</span></a>
+        <p class="footer-fine">© 2026 Across the Pool. A fictional series. Sam, Surfer, and all characters and events depicted are fictional; any resemblance to real people is coincidental.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./characters.html">Characters</a></li>
+        <li><a href="./story.html">The Story</a></li>
+        <li><a href="./episodes.html">Episodes</a></li>
+        <li><a href="./gallery.html">Gallery</a></li>
+        <li><a href="./trailer.html">Trailer</a></li>
+        <li><a href="./behind-the-story.html">Behind the Story</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="./assets/js/data.js"></script>
+<script src="./assets/js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var el = document.getElementById("future-updates");
+    if (el && window.SITE_DATA) {
+      el.innerHTML = SITE_DATA.possibleFutureUpdates.map(function (u) {
+        return '<span class="pill">' + u.replace(/&/g,"&amp;").replace(/</g,"&lt;") + '</span>';
+      }).join("");
+    }
+  });
+</script>
+</body>
+</html>

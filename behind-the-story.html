@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Behind the Story — Across the Pool</title>
+<meta name="description" content="Behind the scenes of Across the Pool: production notes, Sam's three theories, and quotes from the LGBTQ+ coming-of-age summer romance series.">
+<meta name="keywords" content="LGBTQ+ coming-of-age story, gay romcom, summer romance series">
+<link rel="canonical" href="./behind-the-story.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="./index.html" class="wordmark">ACROSS THE <span class="pool-word">POOL</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">☰ Menu</button>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./characters.html">Characters</a></li>
+      <li><a href="./story.html">The Story</a></li>
+      <li><a href="./episodes.html">Episodes</a></li>
+      <li><a href="./gallery.html">Gallery</a></li>
+      <li><a href="./trailer.html">Trailer</a></li>
+      <li><a href="./behind-the-story.html" aria-current="page">Behind the Story</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Behind the Story</p>
+      <h1>Production notes from a very small production</h1>
+      <p class="hero-tagline" style="max-width:640px;">Think Benidorm's chaotic energy, on a much smaller budget, with a holiday that's ten times the quality and considerably less sunburn.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Sam's Three Theories</h2>
+      <p>Presented again here, because they're the whole engine of the show.</p>
+      <div class="grid grid-3" data-theories></div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Selected Quotes</h2>
+      <div id="quotes-block"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Production Notes</h2>
+      <div id="notes-block"></div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container section-head">
+      <p class="eyebrow">The Gag That Started It All</p>
+      <h2>Sam's Brain</h2>
+      <div data-brain-gags></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="./index.html" class="wordmark">ACROSS THE <span class="pool-word">POOL</span></a>
+        <p class="footer-fine">© 2026 Across the Pool. A fictional series. Sam, Surfer, and all characters and events depicted are fictional; any resemblance to real people is coincidental.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./characters.html">Characters</a></li>
+        <li><a href="./story.html">The Story</a></li>
+        <li><a href="./episodes.html">Episodes</a></li>
+        <li><a href="./gallery.html">Gallery</a></li>
+        <li><a href="./trailer.html">Trailer</a></li>
+        <li><a href="./behind-the-story.html">Behind the Story</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="./assets/js/data.js"></script>
+<script src="./assets/js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!window.SITE_DATA) return;
+    var q = document.getElementById("quotes-block");
+    var n = document.getElementById("notes-block");
+    if (q) q.innerHTML = SITE_DATA.behindTheStory.quotes.map(function (line) {
+      return '<p class="quote-block">' + line + '</p>';
+    }).join("");
+    if (n) n.innerHTML = SITE_DATA.behindTheStory.notes.map(function (line) {
+      return '<p>' + line + '</p>';
+    }).join("");
+  });
+</script>
+</body>
+</html>
