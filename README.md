@@ -2,6 +2,8 @@
 
 Promotional website for *Across the Pool*, a fictional LGBTQ+ coming-of-age romantic comedy/drama set on a ten-day family holiday in Menorca.
 
+Live at: https://rectifysoftware.github.io/atpwebsite/
+
 Static site, no build step, no framework. Open `index.html` directly or deploy the folder as-is to any static host (Netlify, GitHub Pages, Vercel, etc).
 
 ## Structure
